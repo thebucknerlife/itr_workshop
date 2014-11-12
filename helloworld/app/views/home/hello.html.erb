@@ -1,0 +1,16 @@
+<h1>Hello</h1>
+
+This is <%= @name.capitalize %>'s Rails app.
+
+<form action='/new_image' method='post'>
+  <input name='img_url' type'text' placeholder='Add an image url.'>
+  <input name='poster' type'text' placeholder='Who posted this? (optional)'>
+  <input type='submit'>
+</form>
+
+<h1>Gallery</h1>
+ 
+<% @photos.each do |p| %>
+  <%= image_tag p.img_url, height: 500, width: 500 %>
+  <p><%= p.poster_name %></p>
+<% end %>
